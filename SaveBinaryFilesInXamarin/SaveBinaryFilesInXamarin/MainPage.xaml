@@ -4,15 +4,15 @@
              xmlns:local="clr-namespace:SaveBinaryFilesInXamarin"
              x:Class="SaveBinaryFilesInXamarin.MainPage">
 
-    <ScrollView HorizontalOptions="Center">
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button x:Name="takePhoto" Text="Take Photo" Clicked="TakePhoto_Clicked"/>
-            <Button x:Name="fromLibrary" Text="Take Photo from Library" Clicked="FromLibrary_Clicked"/>
+            <Button x:Name="takePhoto" Text="Take Photo" Clicked="TakePhoto_ClickedAsync"/>
+            <Button x:Name="fromLibrary" Text="Take Photo from Library" Clicked="FromLibrary_ClickedAsync"/>
             <Image x:Name="imagefromLibraryorCamera"/>
-            <Button x:Name="saveButton" Text="Save Photo" Clicked="SaveButton_Clicked"/>
+            <Button x:Name="saveButton" Text="Save Photo" Clicked="SaveButton_ClickedAsync"/>
             <Label/>
             <Entry x:Name="folderPath"/>
-            <Button x:Name="loadButtom" Text="Load Image" Clicked="LoadButtom_Clicked"/>
+            <Button x:Name="loadButtom" Text="Load Image" Clicked="LoadButtom_ClickedAsync"/>
             <Image x:Name="loadedImage"/>
         </StackLayout>
     </ScrollView>
