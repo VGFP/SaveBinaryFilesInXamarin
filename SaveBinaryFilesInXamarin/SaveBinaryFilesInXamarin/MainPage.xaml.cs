@@ -72,7 +72,6 @@ namespace SaveBinaryFilesInXamarin
         {
             //creates folder where files will be stored
 
-
             IFileSystem fileSystem = FileSystem.Current;
             IFolder rootFolder = fileSystem.LocalStorage;
             IFolder photosFolder = await rootFolder.CreateFolderAsync("Photos", PCLStorage.CreationCollisionOption.OpenIfExists);
@@ -80,7 +79,7 @@ namespace SaveBinaryFilesInXamarin
             
             if (b!=null)
             {
-                //if we want to save binary data as text file wee need to convert it to Base64String because some values are imposible to save in UFT-8 etc.
+                //if we want to save binary data as text file wee need to convert it to Base64String because some values are imposible to save in UFT-8
                 string imageAsBytes = System.Convert.ToBase64String(b);
                 //now we can save file as it was a text file
                 await saveFile.WriteAllTextAsync(imageAsBytes);
@@ -95,8 +94,7 @@ namespace SaveBinaryFilesInXamarin
 
         private async void LoadButtom_ClickedAsync(object sender, EventArgs e)
         {
-            //creates folder where files will be stored
-
+            //we need to get back to folder where we saved the image
 
             IFileSystem fileSystem = FileSystem.Current;
             IFolder rootFolder = fileSystem.LocalStorage;
@@ -104,7 +102,7 @@ namespace SaveBinaryFilesInXamarin
             //It is just an example more advanced projects need to have some JSON or txt file with all the folders,folder paths and file names saved
             IFile loadFile= await photosFolder.GetFileAsync("Name");
             string loadedBinaryImage = await loadFile.ReadAllTextAsync();
-            //now we need to reverse file from string to bytes
+            //now we need to reverse conversion of the file to get the bytes array
             byte[] fromTextToArray = System.Convert.FromBase64String(loadedBinaryImage);
             loadedImage.Source = ImageSource.FromStream(() => new MemoryStream(fromTextToArray));
         }
