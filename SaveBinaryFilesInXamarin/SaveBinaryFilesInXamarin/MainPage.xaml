@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SaveBinaryFilesInXamarin"
+             x:Class="SaveBinaryFilesInXamarin.MainPage">
+
+    <ScrollView HorizontalOptions="Center">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Button x:Name="takePhoto" Text="Take Photo" Clicked="TakePhoto_Clicked"/>
+            <Button x:Name="fromLibrary" Text="Take Photo from Library" Clicked="FromLibrary_Clicked"/>
+            <Image x:Name="imagefromLibraryorCamera"/>
+            <Button x:Name="saveButton" Text="Save Photo" Clicked="SaveButton_Clicked"/>
+            <Label/>
+            <Entry x:Name="folderPath"/>
+            <Button x:Name="loadButtom" Text="Load Image" Clicked="LoadButtom_Clicked"/>
+            <Image x:Name="loadedImage"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
